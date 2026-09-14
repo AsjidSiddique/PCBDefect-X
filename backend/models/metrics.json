@@ -1,0 +1,89 @@
+{
+  "overall": {
+    "map50": 0.787834644317627,
+    "map50_95": 0.3929486870765686,
+    "map75": 0.33172890543937683,
+    "mAR": 0.4689539074897766,
+    "precision": 0.9000887870788574,
+    "recall": 0.747856080532074,
+    "F1": 0.8141381144523621
+  },
+  "per_class_ap": [
+    {
+      "class": "open",
+      "AP": 0.5457319617271423
+    },
+    {
+      "class": "short",
+      "AP": 0.36053094267845154
+    },
+    {
+      "class": "mousebite",
+      "AP": 0.4053189754486084
+    },
+    {
+      "class": "spur",
+      "AP": 0.41037502884864807
+    },
+    {
+      "class": "copper",
+      "AP": 0.33648207783699036
+    },
+    {
+      "class": "pinhole",
+      "AP": 0.2992531657218933
+    }
+  ],
+  "best_f1_operating_point": {
+    "threshold": 0.44999999999999996,
+    "precision": 0.9119420989143546,
+    "recall": 0.5784238714613619,
+    "f1": 0.7078651685393259,
+    "tp": 756.0,
+    "fp": 73.0,
+    "fn": 551.0
+  },
+  "localization_quality_distribution": {
+    "IoU<0.50": 297,
+    "0.50-0.75": 557,
+    "0.75-0.90": 415,
+    ">=0.90": 38
+  },
+  "eager_latency": {
+    "backend": "eager_pytorch_fp32",
+    "n": 60,
+    "median_ms": 229.24720099945262,
+    "p90_ms": 387.65387370021926,
+    "fps": 4.362103422158632
+  },
+  "model_size_mib": {
+    "eager_checkpoint": 115.34006023406982,
+    "onnx_fp32": 102.67018985748291,
+    "onnx_int8": 27.78465747833252,
+    "tensorrt_fp16": 107.4928092956543
+  },
+  "deployment_registry": {
+    "reference_backend": "eager_pytorch_fp32",
+    "onnx_export": {
+      "status": "ok",
+      "accepted": true
+    },
+    "onnx_runtime_cuda": {
+      "status": "error",
+      "accepted": false,
+      "note": "Formal only if CUDAExecutionProvider actually loaded with CPU fallback disabled."
+    },
+    "onnx_int8": {
+      "status": "ok",
+      "coverage_ok": true,
+      "accepted": true,
+      "note": "Accepted only with real QuantizeLinear/DequantizeLinear coverage; a rejected/failed run is retained as exploratory evidence, never silently upgraded."
+    },
+    "tensorrt_fp16": {
+      "status": "ok",
+      "accepted": true,
+      "note": "Accepted only if a real .trt engine was built, deserialized by the TensorRT runtime, and produced a successful smoke inference."
+    },
+    "primary_recommended_backend": "tensorrt_fp16"
+  }
+}

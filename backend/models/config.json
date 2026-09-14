@@ -1,0 +1,19 @@
+{
+  "model": "RF-DETR Nano",
+  "dataset": "DeepPCB",
+  "num_classes": 6,
+  "classes": [
+    "open",
+    "short",
+    "mousebite",
+    "spur",
+    "copper",
+    "pinhole"
+  ],
+  "image_size": 384,
+  "seed": 42,
+  "served_backend": "tensorrt_fp16",
+  "served_artifact": "deeppcb_fp16.trt",
+  "confidence_operating_threshold": 0.44999999999999996,
+  "iou_match_threshold_used_in_evaluation": 0.5
+}
